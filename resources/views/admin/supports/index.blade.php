@@ -1,6 +1,6 @@
 <h1>Listagem dos supports</h1>
 
-{{ $xss }}
+<a href="{{ route('supports.create') }}">Criar Dúvida</a>
 
 <table>
     <thead>
@@ -16,7 +16,10 @@
                 <td>{{ $support->subject }}</td>
                 <td>{{ $support->status }}</td>
                 <td>{{ $support->body }}</td>
-                <td>></td>
+                <td>
+                    <a href="{{ route('supports.show', $support->id) }}">Ir</a>
+                    <a href="{{ route('supports.edit', $support->id) }}">Editar</a>
+                </td>
             </tr>
         @endforeach
     </tbody>
